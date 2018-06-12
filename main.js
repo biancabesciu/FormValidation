@@ -1,2 +1,6 @@
-let form = document.getElementById('myForm');
-let isValidForm = form.checkValidity();
+function validateForm() {
+    let form = document.getElementById('myForm');
+
+}
+
+

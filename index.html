@@ -8,6 +8,8 @@
 
 <body>
 
+<h1>REGISTRATION FORM</h1>
+
 <div class="container">
     <form id="myForm" onsubmit="return validateForm()">
         <fieldset>
@@ -19,18 +21,18 @@
         <p class="fullName">
             <label for="fullName"> Full Name:</label>
             <span class="asterisk" aria-hidden="true">*</span>
-            <input type="text" required id="fullName" name="fullName" value="">
+            <input type="text" required id="fullName" name="fullName" value="" size=40>
         </p>
 
-        <p class="email">
-            <label for="email">Email:</label>
+        <p class="address">
+            <label for="address"> Address:</label>
             <span class="asterisk" aria-hidden="true">*</span>
-            <input type="email" required id="email" name="email" value="">
+            <input type="text" required id="address" name="address" value="" size=40>
         </p>
 
         <p>
             <label for="country">Country
-            <span class="asterisk" aria-hidden="true">*</span>
+                <span class="asterisk" aria-hidden="true">*</span>
             </label>
             <select  required name="country" id="country" class="form-control">
                 <option value="Nl">Netherlands</option>
@@ -38,6 +40,18 @@
                 <option value="Uk">United Kingdom</option>
                 <option value="Us">United States</option>
             </select>
+        </p>
+
+        <p class="email">
+            <label for="email">Email:</label>
+            <span class="asterisk" aria-hidden="true">*</span>
+            <input type="email" required id="email" name="email" value="" size=40>
+        </p>
+
+        <p class="phone">
+            <label for="phone">Telephone:</label>
+            <span class="asterisk" aria-hidden="true">*</span>
+            <input type="text" required id="phone" name="phone" value="" size=40>
         </p>
 
         <div class="buttons">

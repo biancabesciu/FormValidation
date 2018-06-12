@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <form id="myForm" onsubmit="return validateForm()">
+        <fieldset>
+            <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
+            <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
+            <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
+        </fieldset>
+
+        <p class="fullName">
+            <label for="fullName"> Full Name:</label>
+            <span class="asterisk" aria-hidden="true">*</span>
+            <input type="text" required id="fullName" name="fullName" value="">
+        </p>
+
+        <p class="email">
+            <label for="email">Email:</label>
+            <span class="asterisk" aria-hidden="true">*</span>
+            <input type="email" required id="email" name="email" value="">
+        </p>
+
+        <p>
+            <label for="country">Country
+            <span class="asterisk" aria-hidden="true">*</span>
+            </label>
+            <select  required name="country" id="country" class="form-control">
+                <option value="Nl">Netherlands</option>
+                <option value="Ro">Romania</option>
+                <option value="Uk">United Kingdom</option>
+                <option value="Us">United States</option>
+            </select>
+        </p>
+
+        <div class="buttons">
+            <button type="submit" id="submit" value="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>

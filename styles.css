@@ -15,6 +15,64 @@ form {
     width: 600px;
 }
 
+.fullName {
+    margin-top: 20px;
+}
+
 fieldset {
-    width: 83px;
+    width: 120px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+legend {
+    width: 45%;
+}
+
+input {
+    border-width: thin;
+    border-radius: .25rem;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+}
+
+input[type=date] {
+    width: 312px;
+}
+
+input[type=radio] {
+    margin-left: 14px;
+    margin-right: 5px;
+}
+
+
+label[for=email] {
+    margin-top: 20px;
+}
+
+
+/*div country*/
+select.form-control {
+    width:152px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem);
+}
+
+.postcode {
+    position: relative;
+    float:left;
+}
+
+.country {
+    position: absolute;
+    float:right;
+    margin-left: 162px;
+}
+
+.error {
+    display: none;
+    padding-top: 10px;
+    color: #ff0000;
 }

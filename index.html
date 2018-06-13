@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Validation</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-4.0.0-dist%20(1)/css/bootstrap.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,70 +12,70 @@
     <h1>REGISTRATION FORM</h1>
 
     <div class="container">
-        <form id="myForm" method="post" onsubmit="return validateForm()">
+        <form id="myForm" method="post" onsubmit="validateForm()">
             <fieldset>
                 <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
                 <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
                 <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
             </fieldset>
 
-            <p class="fullName">
+            <div class="fullName">
                 <label for="fullName"> Full Name:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
                 <input type="text" required id="fullName" name="fullName" value="" size=40>
-            </p>
-
-            <p class="dateOfBirth">
-                <label for="dateOfBirth"> Date of birth:</label>
-                <input type="text" id="dateOfBirth" class="datepicker" name="dateOfBirth" value="" data-provide="datepicker" size=40>
-            </p>
-
-            <p class="address">
+            </div>
+            <br>
+            <div class="dateOfBirth">
+                <label for="dateOfBirth"> Birthday:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" value="">
+            </div>
+            <br>
+            <div class="address">
                 <label for="address"> Address:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
                 <input type="text" required id="address" name="address" value="" size=40>
-            </p>
-
-            <p class="postcode">
-                <label for="postcode"> Post code:</label>
+            </div>
+            <br>
+            <div class="postcode">
+                <label for="postcode"> Zip code:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="text" required id="postcode" name="postcode" value="" size=40>
-            </p>
+                <input type="text" required id="postcode" name="postcode" value="" size=15>
+            </div>
 
-            <p>
-                <label for="country">Country
-                    <span class="asterisk" aria-hidden="true">*</span>
-                </label>
-                <select  required name="country" id="country" class="form-control">
+            <div class="country">
+                <label for="country">Country:</label>
+                <span class="asterisk" aria-hidden="true">*</span>
+                <select  required name="country" id="country" class="form-control" onblur="validateSelect()">
+                    <option value=" "></option>
                     <option value="Nl">Netherlands</option>
                     <option value="Ro">Romania</option>
                     <option value="Uk">United Kingdom</option>
                     <option value="Us">United States</option>
                 </select>
-            </p>
+                <span id="country-error" style="display: none" class="error">Please select a country</span>
+            </div>
 
-            <p class="email">
+            <div class="email">
                 <label for="email">Email:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
                 <input type="email" required id="email" name="email" value="" size=40>
-            </p>
-
-            <p class="phone">
+            </div>
+            <br>
+            <div class="phone">
                 <label for="phone">Telephone:</label>
                 <input type="text" id="phone" name="phone" value="" size=40>
-            </p>
-
+            </div>
+            <br>
             <div class="buttons">
-                <button type="submit" id="submit" value="submit">Submit</button>
+                <input type="submit" id="submit" value="Submit" >
             </div>
 
         </form>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="bootstrap-4.0.0-dist%20(1)/js/bootstrap.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

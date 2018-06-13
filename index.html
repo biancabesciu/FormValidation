@@ -8,61 +8,71 @@
 
 <body>
 
-<h1>REGISTRATION FORM</h1>
+    <h1>REGISTRATION FORM</h1>
 
-<div class="container">
-    <form id="myForm" onsubmit="return validateForm()">
-        <fieldset>
-            <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
-            <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
-            <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
-        </fieldset>
+    <div class="container">
+        <form id="myForm" method="post" onsubmit="return validateForm()">
+            <fieldset>
+                <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
+                <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
+                <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
+            </fieldset>
 
-        <p class="fullName">
-            <label for="fullName"> Full Name:</label>
-            <span class="asterisk" aria-hidden="true">*</span>
-            <input type="text" required id="fullName" name="fullName" value="" size=40>
-        </p>
-
-        <p class="address">
-            <label for="address"> Address:</label>
-            <span class="asterisk" aria-hidden="true">*</span>
-            <input type="text" required id="address" name="address" value="" size=40>
-        </p>
-
-        <p>
-            <label for="country">Country
+            <p class="fullName">
+                <label for="fullName"> Full Name:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-            </label>
-            <select  required name="country" id="country" class="form-control">
-                <option value="Nl">Netherlands</option>
-                <option value="Ro">Romania</option>
-                <option value="Uk">United Kingdom</option>
-                <option value="Us">United States</option>
-            </select>
-        </p>
+                <input type="text" required id="fullName" name="fullName" value="" size=40>
+            </p>
 
-        <p class="email">
-            <label for="email">Email:</label>
-            <span class="asterisk" aria-hidden="true">*</span>
-            <input type="email" required id="email" name="email" value="" size=40>
-        </p>
+            <p class="dateOfBirth">
+                <label for="dateOfBirth"> Date of birth:</label>
+                <input type="text" id="dateOfBirth" name="dateOfBirth" value="" data-provide="datepicker" size=40>
+            </p>
 
-        <p class="phone">
-            <label for="phone">Telephone:</label>
-            <span class="asterisk" aria-hidden="true">*</span>
-            <input type="text" required id="phone" name="phone" value="" size=40>
-        </p>
+            <p class="address">
+                <label for="address"> Address:</label>
+                <span class="asterisk" aria-hidden="true">*</span>
+                <input type="text" required id="address" name="address" value="" size=40>
+            </p>
 
-        <div class="buttons">
-            <button type="submit" id="submit" value="submit">Submit</button>
-        </div>
+            <p class="postcode">
+                <label for="postcode"> Post code:</label>
+                <span class="asterisk" aria-hidden="true">*</span>
+                <input type="text" required id="postcode" name="postcode" value="" size=40>
+            </p>
 
-    </form>
-</div>
+            <p>
+                <label for="country">Country
+                    <span class="asterisk" aria-hidden="true">*</span>
+                </label>
+                <select  required name="country" id="country" class="form-control">
+                    <option value="Nl">Netherlands</option>
+                    <option value="Ro">Romania</option>
+                    <option value="Uk">United Kingdom</option>
+                    <option value="Us">United States</option>
+                </select>
+            </p>
+
+            <p class="email">
+                <label for="email">Email:</label>
+                <span class="asterisk" aria-hidden="true">*</span>
+                <input type="email" required id="email" name="email" value="" size=40>
+            </p>
+
+            <p class="phone">
+                <label for="phone">Telephone:</label>
+                <input type="text" id="phone" name="phone" value="" size=40>
+            </p>
+
+            <div class="buttons">
+                <button type="submit" id="submit" value="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

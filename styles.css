@@ -10,14 +10,18 @@
     font-size:14px;
 }
 
-form {
-    margin: 0 auto;
-    width: 600px;
-}
+/*form {*/
+    /*margin: 0 auto;*/
+    /*width: 600px;*/
+/*}*/
 
-.fullName {
-    margin-top: 20px;
-}
+/*h1 {*/
+    /*text-align: center;*/
+/*}*/
+
+/*.fullName {*/
+    /*margin-top: 20px;*/
+/*}*/
 
 fieldset {
     width: 120px;
@@ -26,7 +30,9 @@ fieldset {
 }
 
 legend {
-    width: 45%;
+    font-size: 20px;
+    font-weight: lighter;
+    width: 35%;
 }
 
 input {
@@ -71,8 +77,14 @@ select.form-control:not([size]):not([multiple]) {
     margin-left: 162px;
 }
 
+/*error span*/
 .error {
     display: none;
     padding-top: 10px;
     color: #ff0000;
 }
+
+#fullName-error {
+    width: 158px;
+}
+

@@ -13,7 +13,7 @@
 
     <div class="container">
         <form id="myForm" method="post" onsubmit="validateForm()">
-            <fieldset>
+            <fieldset data-toggle="tooltip" data-placement="right" title="Please choose a box">
                 <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
                 <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
                 <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
@@ -22,7 +22,8 @@
             <div class="fullName">
                 <label for="fullName"> Full Name:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="text" required id="fullName" name="fullName" value="" size=40>
+                <input type="text"  id="fullName" name="fullName" value="" placeholder="John Doe" data-toggle="tooltip" data-placement="right" title="You can only use alphabetic characters" size=40 onblur="validateFullName()">
+                <span id="fullName-error" style="display: none" class="error">Please type your name</span>
             </div>
             <br>
             <div class="dateOfBirth">
@@ -33,37 +34,39 @@
             <div class="address">
                 <label for="address"> Address:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="text" required id="address" name="address" value="" size=40>
+                <input type="text" id="address" name="address" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40>
             </div>
             <br>
             <div class="postcode">
                 <label for="postcode"> Zip code:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="text" required id="postcode" name="postcode" value="" size=15>
+                <input type="text" id="postcode" name="postcode" value="" data-toggle="tooltip" data-placement="left" title="Field required" size=15>
             </div>
 
             <div class="country">
                 <label for="country">Country:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <select  required name="country" id="country" class="form-control" onblur="validateSelect()">
+                <select name="country" id="country" class="form-control" data-toggle="tooltip" data-placement="right" title="Field required" onblur="validateSelect()">
                     <option value=" "></option>
                     <option value="Nl">Netherlands</option>
                     <option value="Ro">Romania</option>
                     <option value="Uk">United Kingdom</option>
                     <option value="Us">United States</option>
                 </select>
-                <span id="country-error" style="display: none" class="error">Please select a country</span>
+                <span id="country-error" style="display: none" class="error">Please select your country</span>
             </div>
 
             <div class="email">
                 <label for="email">Email:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="email" required id="email" name="email" value="" size=40>
+                <input type="email" id="email" name="email" value="" pattern="[^ @]*@[^ @]*"] placeholder="exemple@domain.com" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validateEmail()">
+                <span id="email-error" style="display: none" class="error">Please enter your email</span>
             </div>
             <br>
             <div class="phone">
                 <label for="phone">Telephone:</label>
-                <input type="text" id="phone" name="phone" value="" size=40>
+                <span class="asterisk" aria-hidden="true">*</span>
+                <input type="tel" id="phone" name="phone" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40>
             </div>
             <br>
             <div class="buttons">
@@ -74,8 +77,17 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="tether.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="bootstrap-4.0.0-dist%20(1)/js/bootstrap.js"></script>
     <script src="main.js"></script>
+    <script>
+        $(function () {
+
+            $('[data-toggle="tooltip"]').tooltip()
+
+        })
+    </script>
 </body>
 </html>

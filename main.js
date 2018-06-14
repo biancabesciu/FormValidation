@@ -1,3 +1,27 @@
+
+//Validate Name
+function validateFullName(field) {
+    let regexp = /[A-Za-z -']$/;
+
+    if(regexp.test(document.getElementById(field).value)) {
+        // if true change the box background to green
+        document.getElementById(field).style.background = '#ccffcc';
+
+        //hide error prompt
+        document.getElementById(field + '-error').style.display = "none";
+        return true;
+
+    } else {
+        //if false change the box background to red
+        document.getElementById(field).style.background ='#e35152';
+
+        //show error prompt
+        document.getElementById(field + '-error').style.display = "block";
+        return false;
+    }
+}
+
+
 // Validate Selected Countries
 function validateSelect(x){
 
@@ -11,10 +35,33 @@ function validateSelect(x){
         document.getElementById(x + '-error').style.display = "none";
         return true;
 
-    }else{
+    } else {
 
         // if false change the box background to red
         document.getElementById(x).style.background ='#e35152';
+        return false;
+    }
+}
+
+// Validate email
+function validateEmail(email){
+
+    // set of rules for the input field
+    let regexp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if(regexp.test(email)){
+
+        // if true change the box background to green
+        document.getElementById('email').style.background ='#ccffcc';
+
+        //hide error prompt
+        document.getElementById('email-error').style.display = "none";
+        return true;
+
+    } else {
+
+        // if false change the box background to red
+        document.getElementById('email').style.background ='#e35152';
         return false;
     }
 }
@@ -24,11 +71,21 @@ function validateForm () {
     let error = 0;
     let answer = 0;
 
-
+    //Validate name
+    if(!validateFullName('fullName')) {
+        document.getElementById('fullName-error').style.display = "block";
+        error++;
+    }
 
     //Validate select box
     if(!validateSelect('country')) {
         document.getElementById('country-error').style.display = "block";
+        error++;
+    }
+
+    //Validate email
+    if(validateEmail('email')) {
+        document.getElementById('email-error').style.display = "block";
         error++;
     }
 
@@ -39,9 +96,13 @@ function validateForm () {
 }
 
 //The handler function to be called when the window's load event fires
-window.onload = function() {
+window.addEventListener('load', function() {
+    const form = document.getElementById('myForm');
 
-    document.getElementById('myForm')[0].addEventListener('submit', function() {
-        return validateForm();
-    })
-};
+    form[0].addEventListener('submit', function() {
+            event.preventDefault();
+            event.stopPropagation();
+
+            return validateForm();
+    }, false);
+}, false);

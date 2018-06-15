@@ -2,17 +2,18 @@
 function validateFullName(field) {
     let regexp = /[A-Za-z -']$/;
 
-    if(regexp.test(document.getElementById(field).value)) {
+    if(regexp.test(field).value) {
         // if true change the box background to green
-        document.getElementById(field).style.background = '#ccffcc';
+        document.getElementById('fullName').style.background = '#ccffcc';
         return true;
 
     } else {
         //if false change the box background to red
-        document.getElementById(field).style.background ='#e35152';
+        document.getElementById('fullName').style.background ='#e35152';
         return false;
     }
 }
+
 
 
 // Validate Selected Countries
@@ -54,20 +55,20 @@ function validateEmail(email){
 }
 
 //Validate Dutch phone number
-function validatePhone(input) {
+function validatePhone(phone) {
      //set of rules
      let regexp = /^(?=^.{10,11}$)0\d*-?\d*$/;
 
-    if(regexp.test(document.getElementById(input).value)){
+    if(regexp.test(phone)){
 
         // if true change the box background to green
-        document.getElementById(input).style.background ='#ccffcc';
+        document.getElementById('phone').style.background ='#ccffcc';
         return true;
 
     } else {
 
         // if false change the box background to red
-        document.getElementById(input).style.background ='#e35152';
+        document.getElementById('phone').style.background ='#e35152';
         return false;
     }
 }
@@ -78,7 +79,7 @@ function validateForm () {
     let answer = 0;
 
     //Validate name
-    if(!validateFullName('fullName')) {
+    if(!validateFullName(document.getElementById('fullName').value)) {
         document.getElementById('fullName-error').style.display = "block";
         error++;
     }
@@ -96,7 +97,7 @@ function validateForm () {
     }
 
     //Validate phone number
-    if(!validatePhone('phone')) {
+    if(!validatePhone(document.getElementById('phone').value)) {
         document.getElementById('phone-error').style.display = "block";
         error++;
     }

@@ -95,7 +95,8 @@ input#country {
 }
 
 #fullName-error,
-#email-error {
+#email-error,
+#phone-error {
     width: 158px;
 }
 

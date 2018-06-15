@@ -5,17 +5,11 @@ function validateFullName(field) {
     if(regexp.test(document.getElementById(field).value)) {
         // if true change the box background to green
         document.getElementById(field).style.background = '#ccffcc';
-
-        //hide error prompt
-        document.getElementById(field + '-error').style.display = "none";
         return true;
 
     } else {
         //if false change the box background to red
         document.getElementById(field).style.background ='#e35152';
-
-        //show error prompt
-        document.getElementById(field + '-error').style.display = "block";
         return false;
     }
 }
@@ -29,9 +23,6 @@ function validateCountry(input){
 
         // if true change the box background to green
         document.getElementById(input).style.background ='#ccffcc';
-
-        //hide error prompt
-        document.getElementById(input + '-error').style.display = "none";
         return true;
 
     } else {
@@ -52,27 +43,34 @@ function validateEmail(email){
 
         // if true change the box background to green
         document.getElementById('email').style.background ='#ccffcc';
-
-        //hide error prompt
-        document.getElementById('email-error').style.display = "none";
         return true;
 
     } else {
 
         // if false change the box background to red
         document.getElementById('email').style.background ='#e35152';
-
-        //show error prompt
-        document.getElementById('email-error').style.display = "block";
         return false;
     }
 }
 
-//Validate phone
-// function validatePhone(number) {
-//     //set of rules
-//     let regexp = ;
-// }
+//Validate Dutch phone number
+function validatePhone(input) {
+     //set of rules
+     let regexp = /^(?=^.{10,11}$)0\d*-?\d*$/;
+
+    if(regexp.test(document.getElementById(input).value)){
+
+        // if true change the box background to green
+        document.getElementById(input).style.background ='#ccffcc';
+        return true;
+
+    } else {
+
+        // if false change the box background to red
+        document.getElementById(input).style.background ='#e35152';
+        return false;
+    }
+}
 
 function validateForm () {
     //Set error catcher
@@ -85,7 +83,7 @@ function validateForm () {
         error++;
     }
 
-    //Validate select box
+    //Validate country
     if(!validateCountry('country')) {
         document.getElementById('country-error').style.display = "block";
         error++;
@@ -97,23 +95,27 @@ function validateForm () {
         error++;
     }
 
+    //Validate phone number
+    if(!validatePhone('phone')) {
+        document.getElementById('phone-error').style.display = "block";
+        error++;
+    }
+
     // Don't submit form if there are errors
     if(error > 0){
         return false;
     }
 }
 
+
 //The handler function to be called when the window's load event fires
 window.addEventListener('load', function() {
     const form = document.getElementById('myForm');
 
     form[0].addEventListener('submit', function() {
-        event.preventDefault();
-        event.stopPropagation();
-
-        // Display progress bar
-        document.getElementById('loading').show();
+        //Display loader
+        document.getElementById('loading').style.display= "block";
 
         return validateForm();
-    }, false);
-}, false);
+    });
+});

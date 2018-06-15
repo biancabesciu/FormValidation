@@ -12,7 +12,7 @@
     <h1>REGISTRATION FORM</h1>
 
     <div class="container">
-        <form id="myForm" method="post" onsubmit="validateForm()">
+        <form id="myForm" method="post" onsubmit="return validateForm()">
             <fieldset data-toggle="tooltip" data-placement="right" title="Please choose a box">
                 <legend><span class="asterisk" aria-hidden="true">Title</span></legend>
                 <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
@@ -58,12 +58,15 @@
                 <span id="email-error" style="display: none" class="error">Please enter your email</span>
             </div>
             <br>
+
             <div class="phone">
                 <label for="phone">Telephone:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
                 <input type="tel" id="phone" name="phone" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validatePhone()">
+                <span id="phone-error" style="display: none" class="error">Please enter your email</span>
             </div>
             <br>
+
             <div id="loading">
                     <svg width="80px"  height="80px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: none;"><!--circle(cx="16",cy="50",r="10")-->
                     <circle cx="84" cy="50" r="7.87582" fill="#c3d582">
@@ -102,7 +105,7 @@
             </div>
 
             <div class="buttons">
-                <input type="submit" id="submit" value="Submit" >
+                <input type="submit" id="submit" value="Submit">
             </div>
 
         </form>
@@ -117,7 +120,7 @@
     <script>
         $(function () {
 
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
 
         })
     </script>

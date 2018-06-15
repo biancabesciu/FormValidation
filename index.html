@@ -53,20 +53,20 @@
                     <option value="Uk">United Kingdom</option>
                     <option value="Us">United States</option>
                 </select>
-                <span id="country-error" style="display: none" class="error">Please select your country</span>
+                <span id="country-error" style="display: none" class="error">Select your country</span>
             </div>
 
             <div class="email">
                 <label for="email">Email:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="email" id="email" name="email" value="" pattern="[^ @]*@[^ @]*"] placeholder="exemple@domain.com" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validateEmail()">
+                <input type="email" id="email" name="email" value="" placeholder="exemple@domain.com" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validateEmail()">
                 <span id="email-error" style="display: none" class="error">Please enter your email</span>
             </div>
             <br>
             <div class="phone">
                 <label for="phone">Telephone:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <input type="tel" id="phone" name="phone" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40>
+                <input type="tel" id="phone" name="phone" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validatePhone()">
             </div>
             <br>
             <div class="buttons">

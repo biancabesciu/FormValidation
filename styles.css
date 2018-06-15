@@ -84,7 +84,8 @@ select.form-control:not([size]):not([multiple]) {
     color: #ff0000;
 }
 
-#fullName-error {
+#fullName-error,
+#email-error {
     width: 158px;
 }
 

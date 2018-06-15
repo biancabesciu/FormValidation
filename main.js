@@ -1,4 +1,3 @@
-
 //Validate Name
 function validateFullName(field) {
     let regexp = /[A-Za-z -']$/;
@@ -62,8 +61,17 @@ function validateEmail(email){
 
         // if false change the box background to red
         document.getElementById('email').style.background ='#e35152';
+
+        //show error prompt
+        document.getElementById('email-error').style.display = "block";
         return false;
     }
+}
+
+//Validate phone
+function validatePhone(number) {
+    //set of rules
+    let regexp = ;
 }
 
 function validateForm () {
@@ -84,7 +92,7 @@ function validateForm () {
     }
 
     //Validate email
-    if(validateEmail('email')) {
+    if(validateEmail(document.getElementById('email').value)) {
         document.getElementById('email-error').style.display = "block";
         error++;
     }

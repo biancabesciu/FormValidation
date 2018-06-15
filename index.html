@@ -18,6 +18,7 @@
                 <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
                 <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
             </fieldset>
+            <br>
 
             <div class="fullName">
                 <label for="fullName"> Full Name:</label>
@@ -46,13 +47,7 @@
             <div class="country">
                 <label for="country">Country:</label>
                 <span class="asterisk" aria-hidden="true">*</span>
-                <select name="country" id="country" class="form-control" data-toggle="tooltip" data-placement="right" title="Field required" onblur="validateSelect()">
-                    <option value=" "></option>
-                    <option value="Nl">Netherlands</option>
-                    <option value="Ro">Romania</option>
-                    <option value="Uk">United Kingdom</option>
-                    <option value="Us">United States</option>
-                </select>
+                <input name="country" id="country" class="form-control" value="Netherlands" data-toggle="tooltip" data-placement="right" title="Field required" onblur="validateCountry()">
                 <span id="country-error" style="display: none" class="error">Select your country</span>
             </div>
 
@@ -69,6 +64,43 @@
                 <input type="tel" id="phone" name="phone" value="" data-toggle="tooltip" data-placement="right" title="Field required" size=40 onblur="validatePhone()">
             </div>
             <br>
+            <div id="loading">
+                    <svg width="80px"  height="80px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: none;"><!--circle(cx="16",cy="50",r="10")-->
+                    <circle cx="84" cy="50" r="7.87582" fill="#c3d582">
+                        <animate attributeName="r" values="10;0;0;0;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s">
+                        </animate>
+                        <animate attributeName="cx" values="84;84;84;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s">
+                        </animate>
+                    </circle>
+
+                    <circle cx="57.2222" cy="50" r="10" fill="#75b34c">
+                        <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="-1.15s">
+                        </animate>
+                        <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="-1.15s">
+                        </animate>
+                    </circle>
+
+                    <circle cx="23.2222" cy="50" r="10" fill="#a2d895">
+                        <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="-0.575s">
+                        </animate>
+                        <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="-0.575s">
+                        </animate>
+                    </circle>
+
+                    <circle cx="16" cy="50" r="2.12418" fill="#d4ecc9">
+                        <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s"></animate>
+                        <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s"></animate>
+                    </circle>
+
+                    <circle cx="16" cy="50" r="0" fill="#c3d582">
+                        <animate attributeName="r" values="0;0;10;10;10" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s">
+                        </animate>
+                        <animate attributeName="cx" values="16;16;16;50;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="2.3s" repeatCount="indefinite" begin="0s">
+                        </animate>
+                    </circle>
+                </svg>
+            </div>
+
             <div class="buttons">
                 <input type="submit" id="submit" value="Submit" >
             </div>
@@ -78,7 +110,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="tether.js"></script>
+    <script src="tether-1.4.4/dist/js/tether.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="bootstrap-4.0.0-dist%20(1)/js/bootstrap.js"></script>
     <script src="main.js"></script>

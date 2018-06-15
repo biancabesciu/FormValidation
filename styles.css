@@ -77,6 +77,16 @@ select.form-control:not([size]):not([multiple]) {
     margin-left: 162px;
 }
 
+input#country {
+    width: 77%;
+    line-height: 1.4;
+}
+
+#loading{
+    display:none;
+    margin-left:123px
+}
+
 /*error span*/
 .error {
     display: none;

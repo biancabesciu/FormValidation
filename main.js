@@ -22,22 +22,22 @@ function validateFullName(field) {
 
 
 // Validate Selected Countries
-function validateSelect(x){
-
+function validateCountry(input){
+    let regexp = /[A-Za-z -']$/;
     // When a new <option> is selected
-    if(document.getElementById(x).selectedIndex !== 0){
+    if(regexp.test(document.getElementById(input).value)){
 
         // if true change the box background to green
-        document.getElementById(x).style.background ='#ccffcc';
+        document.getElementById(input).style.background ='#ccffcc';
 
         //hide error prompt
-        document.getElementById(x + '-error').style.display = "none";
+        document.getElementById(input + '-error').style.display = "none";
         return true;
 
     } else {
 
         // if false change the box background to red
-        document.getElementById(x).style.background ='#e35152';
+        document.getElementById(input).style.background ='#e35152';
         return false;
     }
 }
@@ -69,10 +69,10 @@ function validateEmail(email){
 }
 
 //Validate phone
-function validatePhone(number) {
-    //set of rules
-    let regexp = ;
-}
+// function validatePhone(number) {
+//     //set of rules
+//     let regexp = ;
+// }
 
 function validateForm () {
     //Set error catcher
@@ -86,13 +86,13 @@ function validateForm () {
     }
 
     //Validate select box
-    if(!validateSelect('country')) {
+    if(!validateCountry('country')) {
         document.getElementById('country-error').style.display = "block";
         error++;
     }
 
     //Validate email
-    if(validateEmail(document.getElementById('email').value)) {
+    if(!validateEmail(document.getElementById('email').value)) {
         document.getElementById('email-error').style.display = "block";
         error++;
     }
@@ -108,9 +108,12 @@ window.addEventListener('load', function() {
     const form = document.getElementById('myForm');
 
     form[0].addEventListener('submit', function() {
-            event.preventDefault();
-            event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-            return validateForm();
+        // Display progress bar
+        document.getElementById('loading').show();
+
+        return validateForm();
     }, false);
 }, false);
